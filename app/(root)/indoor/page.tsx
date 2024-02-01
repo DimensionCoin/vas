@@ -14,7 +14,7 @@ function IndoorPage() {
   });
 
   useEffect(() => {
-    if (!officeData) return; // Check for officeData before setting interval
+    if (!officeData || officeData.imgURL.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentImageIndex(
@@ -22,7 +22,7 @@ function IndoorPage() {
       );
     }, 2000);
     return () => clearInterval(interval);
-  }, [officeData ? officeData.imgURL.length : 0]); // Add dependency
+  }, [officeData ? officeData.imgURL.length : 0]);
 
   if (!officeData) {
     return <div>Error: Indoor data not found!</div>;

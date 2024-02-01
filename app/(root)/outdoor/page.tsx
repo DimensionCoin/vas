@@ -13,20 +13,20 @@ function OutdoorPage() {
     description: "",
   });
 
-   useEffect(() => {
-     if (!officeData) return; // Check for officeData
+  useEffect(() => {
+    if (!officeData || officeData.imgURL.length === 0) return;
 
-     const interval = setInterval(() => {
-       setCurrentImageIndex(
-         (prevIndex) => (prevIndex + 1) % officeData.imgURL.length
-       );
-     }, 2000);
-     return () => clearInterval(interval);
-   }, [officeData ? officeData.imgURL.length : 0]); // Add dependency
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % officeData.imgURL.length
+      );
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [officeData ? officeData.imgURL.length : 0]);
 
-   if (!officeData) {
-     return <div>Error: Office data not found!</div>;
-   }
+  if (!officeData) {
+    return <div>Error: Indoor data not found!</div>;
+  }
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;

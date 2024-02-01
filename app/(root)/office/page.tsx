@@ -5,31 +5,28 @@ import { servicebarLinks } from "@/lib/utils";
 function OfficePage() {
   const officeData = servicebarLinks.find((link) => link.name === "Office");
 
-  // Declare useState hooks here
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [formData, setFormData] = useState({
-    name: "",
-    phoneNumber: "",
-    address: "",
-    description: "",
-  });
+ const [currentImageIndex, setCurrentImageIndex] = useState(0);
+ const [formData, setFormData] = useState({
+   name: "",
+   phoneNumber: "",
+   address: "",
+   description: "",
+ });
 
-  // Declare useEffect hook here
-  useEffect(() => {
-    if (!officeData || !officeData.imgURL.length) return; // Check for officeData and imgURL length
+ useEffect(() => {
+   if (!officeData || officeData.imgURL.length === 0) return;
 
-    const interval = setInterval(() => {
-      setCurrentImageIndex(
-        (prevIndex) => (prevIndex + 1) % officeData.imgURL.length
-      );
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [officeData ? officeData.imgURL.length : 0]);
+   const interval = setInterval(() => {
+     setCurrentImageIndex(
+       (prevIndex) => (prevIndex + 1) % officeData.imgURL.length
+     );
+   }, 2000);
+   return () => clearInterval(interval);
+ }, [officeData ? officeData.imgURL.length : 0]);
 
-  // Conditional rendering logic comes after hooks
-  if (!officeData) {
-    return <div>Error: Office data not found!</div>;
-  }
+ if (!officeData) {
+   return <div>Error: Indoor data not found!</div>;
+ }
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
