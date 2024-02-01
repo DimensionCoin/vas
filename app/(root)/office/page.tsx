@@ -2,12 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { servicebarLinks } from "@/lib/utils";
 
-function OutdoorPage() {
+function OfficePage() {
   const officeData = servicebarLinks.find((link) => link.name === "Office");
-  if (!officeData) {
-    return <div>Error: Office data not found!</div>;
-  }
 
+  // Declare useState hooks here
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
@@ -16,14 +14,22 @@ function OutdoorPage() {
     description: "",
   });
 
+  // Declare useEffect hook here
   useEffect(() => {
+    if (!officeData || !officeData.imgURL.length) return; // Check for officeData and imgURL length
+
     const interval = setInterval(() => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % officeData.imgURL.length
       );
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [officeData ? officeData.imgURL.length : 0]);
+
+  // Conditional rendering logic comes after hooks
+  if (!officeData) {
+    return <div>Error: Office data not found!</div>;
+  }
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
@@ -89,12 +95,13 @@ function OutdoorPage() {
           Send Email
         </button>
         <p className="text-xs text-black mt-2">
-          *After clicking 'Send Email', your mail app will open. Please review
-          the pre-filled email and hit 'send' to complete your request.*
+          *After clicking &apos;Send Email&apos;, your mail app will open.
+          Please review the pre-filled email and hit &apos;send&apos; to
+          complete your request.*
         </p>
       </form>
     </div>
   );
 }
 
-export default OutdoorPage;
+export default OfficePage;
