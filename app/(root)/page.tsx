@@ -8,7 +8,7 @@ import React from "react";
 const Home = () => {
   return (
     <div className="p-1 ">
-      <div className="relative max-w-auto h-[40vh] lg:h-[60vh] p-3 px-8 rounded-md">
+      <div className="relative max-w-auto h-[30vh] lg:h-[60vh] p-3 px-8 rounded-md">
         <Image
           src="/main.png"
           alt="Header Image"
@@ -19,7 +19,7 @@ const Home = () => {
         <div className="absolute top-0 left-0 z-10 p-4 md:p-8">
           <div className=" p-2 md:p-4 bg-black/60 rounded-lg">
             <div className="space-y-1">
-              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium leading-none text-[#c39457] font-extrabold">
+              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-none text-[#c39457] font-extrabold">
                 Vassallo Construction
               </h1>
               <p className="text-xs sm:text-base md:text-lg lg:text-xl xl:text-lg text-[#acacac] font-bold">
@@ -42,7 +42,7 @@ const Home = () => {
       <div>
         <Cards />
       </div>
-      <div className="relative max-w-auto h-[50vh] p-3 px-8 rounded-md mb-20 md:mb-4 mx-6 lg:mx-40">
+      <div className="relative max-w-auto h-[33vh] sm:h-[50vh] p-3 px-8 rounded-md mb-20 md:mb-4 mx-6 lg:mx-40">
         <Image
           src="/second.jpg"
           alt="Header Image"
@@ -54,12 +54,12 @@ const Home = () => {
         <div className="bg-black/30 border">
           <div className="absolute top-0 left-0 z-10 p-2 px-4  ">
             <div className="space-y-1">
-              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium leading-none text-[#c39457] font-bold">
+              <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-none text-[#c39457] font-bold">
                 Our Journey in Construction
               </h1>
             </div>
             <div className="border border-white my-4 mx-2 rounded-lg"></div>
-            <p className="font-semibold text-xs sm:text-lg lg:text-lg text-white">
+            <p className="font-semibold text-sm sm:text-xl lg:text-xl text-white">
               At Vassallo Construction, we pride ourselves on our commitment to
               quality and attention to detail. With years of experience in the
               industry, our team is dedicated to ensuring that each project is
@@ -72,7 +72,7 @@ const Home = () => {
                 <a href="tel:4167023183" title="Call us at 4167023183">
                   <Image src="/phone.svg" alt="phone" height={30} width={30} />
                 </a>
-                <a href="mailto:vnick8@hotmail.com?subject=Contact Vassallo Construction">
+                <a href="mailto:tylervassalloconstruction@gmail.com?subject=Contact Vassallo Construction">
                   <Image src="/email.svg" alt="call" height={30} width={30} />
                 </a>
                 <a

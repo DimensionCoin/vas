@@ -31,7 +31,7 @@ function OutdoorPage() {
   };
 
   const handleSendEmail = () => {
-    const mailtoLink = `mailto:vnick8@hotmail.com?subject=Office Renovation&body=Name: ${formData.name}%0D%0A%0D%0APhone Number: ${formData.phoneNumber}%0D%0A%0D%0AAddress: ${formData.address}%0D%0A%0D%0ADescription: ${formData.description}`;
+    const mailtoLink = `mailto:tylervassalloconstruction@gmail.com?subject=Office Renovation&body=Name: ${formData.name}%0D%0A%0D%0APhone Number: ${formData.phoneNumber}%0D%0A%0D%0AAddress: ${formData.address}%0D%0A%0D%0ADescription: ${formData.description}`;
     window.location.href = mailtoLink;
   };
 
@@ -84,7 +84,7 @@ function OutdoorPage() {
         <button
           type="button"
           onClick={handleSendEmail}
-          className="bg-green-600 text-white p-3 rounded-md w-full hover:bg-green-500 transition duration-300"
+          className="bg-[#2b403f] hover:bg-[#376866] text-white p-3 rounded-md w-full  transition duration-300"
         >
           Send Email
         </button>

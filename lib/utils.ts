@@ -7,7 +7,12 @@ export function cn(...inputs: ClassValue[]) {
 
 export const servicebarLinks = [
   {
-    imgURL: ["/outdoorimg.png", "/outdoor2.png", "/outdoor3.png"],
+    imgURL: [
+      "/outdoorimg.png",
+      "/outdoor1.jpeg",
+      "/outdoor3.png",
+      "fenceimg.jpg",
+    ],
     name: "Outdoor",
     route: "/outdoor",
     description: "Build all types of fences to suit your backyard",
@@ -19,10 +24,15 @@ export const servicebarLinks = [
     description: "office space is nessisary, get the most out of your office",
   },
   {
-    imgURL: ["/indoorimg.png", "/indoor3.png", "/indoor3.png"],
+    imgURL: [
+      "/indoorimg.png",
+      "/indoorimg.jpg",
+      "/indoor3.png",
+      "/indoor3.png",
+    ],
     name: "Indoor",
     route: "/indoor",
     description: "Need New Trim or wall decor",
-  }
+  },
 ];
  

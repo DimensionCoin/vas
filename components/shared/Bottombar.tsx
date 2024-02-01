@@ -7,7 +7,7 @@ function Bottombar() {
         <a href="tel:4167023183" title="Call us at 4167023183">
           <Image src="/phone.svg" alt="phone" height={30} width={30} />
         </a>
-        <a href="mailto:vnick8@hotmail.com?subject=Contact Vassallo Construction">
+        <a href="mailto:contact@vassallocon.com?subject=Contact Vassallo Construction">
           <Image src="/email.svg" alt="call" height={30} width={30} />
         </a>
         <a
