@@ -7,18 +7,20 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
+interface ExtendedDialogPortalProps extends SheetPrimitive.DialogPortalProps {
+  className?: string;
+}
+
 const Sheet = SheetPrimitive.Root
 
 const SheetTrigger = SheetPrimitive.Trigger
 
 const SheetClose = SheetPrimitive.Close
 
-const SheetPortal = ({
-  className,
-  ...props
-}: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
-)
+const SheetPortal = ({ className, ...props }: ExtendedDialogPortalProps) => (
+  <SheetPrimitive.Portal className={cn(className)} {...(props as any)} />
+);
+
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
 const SheetOverlay = React.forwardRef<
